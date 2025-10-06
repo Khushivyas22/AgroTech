@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - AgroTECH</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(120deg, #1b5e20, #66bb6a, #a5d6a7);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .login-container {
+      width: 380px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      text-align: center;
+      color: white;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .login-container h2 {
+      margin-bottom: 15px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+    .login-container p {
+      font-size: 14px;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+    .input-group input {
+      width: 80%;
+      padding: 12px 40px 12px 15px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      font-size: 14px;
+    }
+    .input-group i {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #2e7d32;
+      font-size: 18px;
+    }
+    .login-container button {
+      width: 60%;
+      padding: 12px;
+      background: linear-gradient(90deg, #2e7d32, #66bb6a);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .login-container button:hover {
+      background: linear-gradient(90deg, #1b5e20, #388e3c);
+      transform: translateY(-2px);
+    }
+    .extra {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .extra a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .extra a:hover {
+      text-decoration: underline;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>🌱 AgroTECH</h2>
+    <p>Login to continue your farming journey</p>
+    <!-- FIXED: method=post, action=LoginServlet -->
+    <form action="LoginServlet" method="post">
+      <div class="input-group">
+        <input type="text" id="username" name="username" placeholder="Enter Username" required>
+        <i class="fas fa-user"></i>
+      </div>
+      <div class="input-group">
+        <input type="password" id="password" name="password" placeholder="Enter Password" required>
+        <i class="fas fa-lock"></i>
+      </div>
+      <button type="submit">Login</button>
+    </form>
+    <div class="extra">
+      <p>Don’t have an account? <a href="register.html">Register</a></p>
+    </div>
+  </div>
+</body>
+</html>

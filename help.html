@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Help - AgroTech</title>
+  <style>
+    :root{
+      --green:#2e7d32; --green-light:#94b444; --bg:#f4f9f4; --card:#ffffff;
+      --muted:#6b6b6b; --maxw:1000px;
+    }
+    body{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin:0; background:var(--bg); color:#222;}
+    header{background:linear-gradient(90deg,var(--green),var(--green-light)); color:#fff; padding:20px; text-align:center; font-weight:700;}
+    main{max-width:var(--maxw); margin:24px auto; padding:18px;}
+    .grid{display:grid; grid-template-columns:1fr 360px; gap:20px;}
+    @media(max-width:900px){ .grid{grid-template-columns:1fr;} }
+    .card{background:var(--card); border-radius:12px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+    h1{margin:0 0 12px 0}
+    /* FAQ */
+    .faq-item{border-bottom:1px solid #eee; padding:12px 0;}
+    .faq-q{cursor:pointer; font-weight:700;}
+    .faq-a{margin-top:8px; color:var(--muted); display:none;}
+    .faq-q[aria-expanded="true"] + .faq-a{display:block;}
+    /* Contact form */
+    label{display:block; font-weight:700; margin-bottom:6px;}
+    input, textarea, select{width:100%; padding:10px; border-radius:8px; border:1px solid #ddd; font-size:0.95rem;}
+    textarea{min-height:120px; resize:vertical;}
+    .btn{background:var(--green-light); color:white; border:none; padding:10px 16px; border-radius:10px; cursor:pointer; font-weight:700;}
+    .help-meta{font-size:0.9rem; color:var(--muted); margin-bottom:12px;}
+    .small{font-size:0.9rem; color:var(--muted);}
+  </style>
+</head>
+<body>
+  <header>AgroTech — Help</header>
+
+  <main>
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h1>Frequently Asked Questions</h1>
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">1. Kaise apna product list karun?</div>
+            <div class="faq-a">Login karke "Add Service" page par jaiye → details fill karke submit karein. Image aur price required fields hain.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">2. Password bhool gaya — kya karun?</div>
+            <div class="faq-a">Login page par "Forgot Password" link use karke registered email par reset link bhejiye.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">3. Order/Booking cancel karna hai</div>
+            <div class="faq-a">Orders page par jaake cancel request bhejiye. Admin approval ke baad refund/confirmation milega.</div>
+          </div>
+
+          <p class="small">Agar tumhe yeh FAQs me answer nahi mila, toh right side ka support form bhar ke humse contact karo — hum 24-48 ghante me reply karenge.</p>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h2>Guides & Resources</h2>
+          <ul>
+            <li class="small">How-to videos (coming soon)</li>
+            <li class="small">Seller policies and tips</li>
+            <li class="small">Payment & refund policy</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card">
+          <h2>Contact Support</h2>
+          <p class="help-meta">Fill below form — our support team will reply to your registered email.</p>
+
+          <!-- Example: POST to SupportServlet (change URL to your servlet) -->
+          <form id="supportForm" method="post" action="SupportServlet" novalidate>
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic" required>
+              <option value="">-- Select --</option>
+              <option>Account</option>
+              <option>Listing / Product</option>
+              <option>Payments</option>
+              <option>Technical</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Describe your problem..." required></textarea>
+
+            <label for="attach">Attachment (optional)</label>
+            <input id="attach" name="attach" type="file" accept=".png,.jpg,.jpeg,.pdf" />
+
+            <div style="margin-top:12px; text-align:right;">
+               <form action="home.html" method="get" style="display: inline;">
+  <button type="submit">send request>></button>
+</form>
+
+          <p class="small" style="margin-top:12px;">Emergency: +91 11 1234 5678 (Mon–Fri 9:00–18:00)</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    // Simple accessible FAQ toggle
+    document.querySelectorAll('.faq-q').forEach(q=>{
+      q.addEventListener('click', () => {
+        const expanded = q.getAttribute('aria-expanded') === 'true';
+        q.setAttribute('aria-expanded', String(!expanded));
+      });
+      q.addEventListener('keydown', (e)=>{
+        if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+      });
+    });
+
+    // Basic client-side validation for support form
+    document.getElementById('supportForm').addEventListener('submit', function(e){
+      const topic = document.getElementById('topic').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      if(!topic || !msg){
+        e.preventDefault();
+        alert('Please select a topic and write a short message.');
+      }
+      // else allow submit; backend should handle storage/email
+    });
+  </script>
+</body>
+</html>

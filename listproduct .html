@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Your Service - AgroTECH</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f9f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(90deg, #2e7d32, #66bb6a);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background: #ff9800;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e68900;
+    }
+
+    .back-btn {
+      background: #2196f3;
+      margin-top: 10px;
+    }
+
+    .back-btn:hover {
+      background: #1976d2;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>➕ Add Your Service</h1>
+  </header>
+
+  <div class="form-container">
+    <h2>Service Details</h2>
+    <form action="thankyou.html" method="post">
+      <label for="name">Service/Product Name:</label>
+      <input type="text" id="name" name="name" placeholder="e.g. Tractor Rental, Fertilizer Supply" required>
+
+      <label for="category">Category:</label>
+      <select id="category" name="category" required>
+        <option value="">--Select Category--</option>
+        <option value="machinery">Machinery</option>
+        <option value="fertilizer">Fertilizer</option>
+        <option value="transport">Transport</option>
+        <option value="seeds">Seeds</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="price">Price (₹):</label>
+      <input type="number" id="price" name="price" placeholder="Enter price" required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" rows="4" placeholder="Write about your service..." required></textarea>
+
+      <label for="image">Upload Image:</label>
+      <input type="file" id="image" name="image" accept="image/*" required>
+   
+    </form>
+       <form action="home.html">
+      <button type="submit">Submit Service</button></form>
+
+    <form action="home.html">
+      <button type="submit" class="back-btn">⬅ Back to Home</button>
+    </form>
+  </div>
+</body>
+</html>

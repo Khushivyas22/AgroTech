@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroTECH</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f9f4;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background: linear-gradient(90deg, #2e7d32, #66bb6a);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    nav {
+      background: #ffffff;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    form input[type="text"] {
+      padding: 10px;
+      border-radius: 20px;
+      border: 1px solid #ccc;
+      outline: none;
+      width: 220px;
+      transition: 0.3s;
+    }
+
+    form input[type="text"]:focus {
+      border-color: #4caf50;
+      box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+    }
+
+    form button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    form button:hover {
+      background: #388e3c;
+    }
+
+    nav button {
+      background: #2e7d32;
+      color: white;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav button:hover {
+      background: #1b5e20;
+      transform: scale(1.05);
+    }
+
+    .services-section {
+      margin-top: 1cm;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .services-card {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      transition: 0.3s;
+    }
+
+    .services-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .services-card h2 {
+      margin-bottom: 15px;
+      color: #2e7d32;
+    }
+
+    .services-card button {
+      background: #ff9800;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .services-card button:hover {
+      background: #e68900;
+      transform: scale(1.05);
+    }
+
+    /* Products Section */
+    .products-section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .products-section h2 {
+      color: #2e7d32;
+      margin-bottom: 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .product-card p {
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .product-card button {
+      background: #4caf50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .product-card button:hover {
+      background: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌱 Welcome to AgroTECH</h1>
+  </header>
+
+  <nav>
+   <form action="searchService.jsp" method="get">
+  <input type="text" placeholder="Search..." name="search">
+  <button type="submit">Search</button>
+</form>
+    <button onclick="location.href='myaccount.jsp'">My Account</button>
+    <button onclick="location.href='my purchase.html'">My Purchase</button>
+    <button onclick="location.href='help.html'">Help</button>
+    <button onclick="location.href='login.html'">Logout</button>
+  </nav>
+
+  <section class="services-section">
+    <div class="services-card">
+      <h2>Want to offer your services?</h2>
+      <form action="addService.html" method="get" style="display: inline;">
+        <button type="submit">Proceed >></button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <h2>🚜 Our Products</h2>
+    <h2>Want to see more services?</h2>
+    <form action="getServices.jsp" method="get" style="display: inline;">
+      <button type="submit">View Services >></button>
+    </form>
+  
+    
+    
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/CX/WL/RI/30912792/mahindra-tractor-yuvraj-bumper-1000x1000.jpg" alt="Tractor">
+        <h3>Mahindra Tractor</h3>
+        <p>Powerful tractor for farming needs.</p>
+        <p><strong>₹800 per acre</strong></p>
+        <button onclick="location.href='buy.html'">Rent</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://cpimg.tistatic.com/10029058/b/4/John-deere-Tractors..jpg" alt="Tractor">
+        <h3>John Deere Tractor</h3>
+        <p>Reliable tractor with high efficiency.</p>
+        <p><strong>₹1000 per acre</strong></p>
+        <button onclick="location.href='buy.html'">Rent</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://5.imimg.com/data5/WC/IE/YH/ANDROID-86040604/prod-20200810-2031297210080910753376724-jpg-1000x1000.jpg" alt="Combine Harvester">
+        <h3>Combine Harvester</h3>
+        <p>Efficient harvester for large-scale farming.</p>
+        <p><strong>₹1200 per acre</strong></p>
+        <button onclick="location.href='buy.html'">Rent</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://www.fieldking.com/blogs/wp-content/uploads/2024/09/Ploughing.jpg" alt="Plough Machine">
+        <h3>Plough Machine</h3>
+        <p>Durable plough for soil preparation.</p>
+        <p><strong>₹8000</strong></p>
+        <button onclick="location.href='buy.html'">Rent</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

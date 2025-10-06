@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroTECH - Welcome</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: url('tech1.png') no-repeat center center/cover;
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: white;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: -1;
+    }
+
+    /* Navbar */
+    nav {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #76ff03;
+      text-shadow: 0 0 8px rgba(118, 255, 3, 0.9);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #76ff03;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-top: 4rem;
+      color: #76ff03;
+      text-shadow: 0 0 12px rgba(118, 255, 3, 0.9);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #e0e0e0;
+    }
+
+    /* Role selection */
+    .role-box {
+      margin: 3rem auto;
+      width: 80%;
+      max-width: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .role-box:hover {
+      transform: scale(1.02);
+    }
+
+    .role-box h2 {
+      margin-bottom: 1rem;
+      color: #f1f1f1;
+    }
+
+    label {
+      font-size: 1.2rem;
+      margin: 0 15px;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 8px;
+      transform: scale(1.3);
+      accent-color: #4caf50;
+    }
+
+    .proceed-btn {
+      display: block;
+      margin: 20px auto 0;
+      background: linear-gradient(90deg, #2e7d32, #66bb6a);
+      color: white;
+      padding: 12px 40px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .proceed-btn:hover {
+      background: linear-gradient(90deg, #1b5e20, #388e3c);
+      transform: scale(1.08);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    /* About Us */
+    .box {
+      width: 85%;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      color: #333;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+    }
+
+    .box h1 {
+      font-size: 2rem;
+      color: #2e7d32;
+      margin-bottom: 10px;
+    }
+
+    .box h2 {
+      font-size: 1.4rem;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    .box p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      .role-box {
+        width: 95%;
+      }
+
+      .box {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">🌱 AgroTECH</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="login.html">Login</a> <style> </style></li>
+      <li><a href="#about">About Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header id="home">
+    <h1>Welcome to AgroTECH</h1>
+    <p>Connecting Farmers, Sharing Resources, Growing Together</p>
+  </header>
+
+  <!-- Role Selection -->
+  <div class="role-box" id="role">
+  
+
+    <form action="combine.html" method='get'>
+      <button type="submit" class="proceed-btn">Proceed &raquo;</button>
+    </form>
+  </div>
+
+  <!-- About Us -->
+  <div class="box" id="about">
+    <h1>About Us</h1>
+    <h2>Welcome to AgroTech</h2>
+    <p>
+      <b>AgroTech</b>, a one-stop platform designed especially for farmers to connect, share, and support
+      each other.
+      Here, you can easily find and rent transport vehicles, farming machinery, and other essential services like
+      fertilizers directly
+      from fellow farmers in your community.
+      <br><br>
+      Our goal is to make farming more affordable, accessible, and collaborative by helping you reduce costs and
+      increase productivity.
+      Whether you need a tractor for a day, transport for your crops, or quality farm inputs, AgroTech brings farmers
+      together to
+      exchange resources and grow together.
+    </p>
+    <div class="box" id="about">
+
+      <p>
+        At <b>AgroTech,</b> we believe farming is not just an occupation – it’s the backbone of our society. 
+        By sharing resources and knowledge, we help farmers thrive together. Join us and be a part of 
+        this revolution where farming meets innovation!
+      </p> <br>
+      <b>AgroTech</b> is more than just a platform – it is a community built by farmers, for farmers, making farming easier, smarter, and more affordable.
+      </p>
+      <br>
+      <p>
+        🚜 <b>What We Offer:</b><br>
+        - Rent and share farming machinery like tractors, harvesters, and tools.<br>
+        - Connect with transport providers for moving crops, seeds, or produce.<br>
+        - Buy or exchange essential inputs such as fertilizers, pesticides, and seeds.<br>
+        - Discover nearby farmers and build stronger local farming networks.
+      </p>
+      <br>
+      <p>
+        🌱 <b>Our Vision:</b><br>
+        To create a sustainable agricultural ecosystem where every farmer, big or small, has equal access 
+        to technology, equipment, and support – helping them increase productivity while reducing costs.
+      </p>
+      <br>
+      <p>
+        🤝 <b>Why Choose AgroTech?</b><br>
+        - Affordable access to farming resources<br>
+        - A trusted network of verified farmers and supplier
+        </p>
+
+  
+</body>
+</html>
+

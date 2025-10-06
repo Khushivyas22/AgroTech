@@ -1,0 +1,299 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Account - AgroTECH</title>
+  <style>
+    :root {
+      --green-dark: #2e7d32;
+      --green-light: #94b444;
+      --yellow-soft: #f9f4c8;
+      --brown-earth: #78503c;
+      --blue-soft: #a6c8e0;
+      --text-primary: #36392e;
+      --text-secondary: #736359;
+      --background: #f4f9f4;
+      --white: #fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background:url(tech1.png);
+      background:grey;
+      color: var(--text-primary);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+      color: var(--white);
+      padding: 25px 20px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: 1px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(120, 80, 60, 0.3);
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgb(70, 105, 70);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(120, 80, 60, 0.15);
+      padding: 30px 45px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color:whitesmoke;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      border-bottom: 3px solid var(whitesmoke);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: url('https://via.placeholder.com/120') center/cover no-repeat;
+      border: 5px solid var(whitesmoke);
+      box-shadow: 0 0 8px var(--blue-soft);
+    }
+
+    .profile-info {
+      flex-grow: 1;
+    }
+
+    .profile-info h2 {
+      margin: 0 0 10px 0;
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(whitesmoke);
+    }
+
+    .profile-info p {
+      color: var(whitesmoke);
+      margin: 0;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    .section h3 {
+      border-bottom: 3px solid var(--yellow-soft);
+      padding-bottom: 8px;
+      margin-bottom: 25px;
+      color: var(whitesmoke);
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Account details grid */
+    .account-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    label {
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: block;
+      color: var(whitesmoke);
+      letter-spacing: 0.7px;
+    }
+
+    /* Display mode */
+    .value {
+      padding: 10px 15px;
+      border-radius: 14px;
+      background: var(--yellow-soft);
+      color: var(--brown-earth);
+      font-weight: 600;
+      border: 2px solid var(--green-light);
+    }
+
+    /* Edit mode hidden by default */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px 15px;
+      border-radius: 14px;
+      border: 2px solid var(--green-light);
+      font-size: 1rem;
+      color: var(--brown-earth);
+      font-weight: 600;
+      display: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input:focus {
+      border-color: var(--green-dark);
+      box-shadow: 0 0 10px var(--green-light);
+      outline: none;
+    }
+
+    /* Toggle checkbox hidden */
+    #editToggle {
+      display: none;
+    }
+
+    /* When toggle is checked, show inputs and hide values */
+    #editToggle:checked ~ main .account-details .value {
+      display: none;
+    }
+    #editToggle:checked ~ main .account-details input {
+      display: block;
+    }
+
+    /* Button group */
+    .btn-group {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    .btn {
+      background: var(--green-light);
+      border: none;
+      color: var(--white);
+      padding: 12px 28px;
+      margin: 0 10px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 1px;
+      box-shadow: 0 3px 12px rgba(148, 180, 68, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--green-dark);
+      box-shadow: 0 6px 20px rgba(46, 125, 50, 0.8);
+      transform: scale(1.05);
+    }
+    /* Cancel button */
+    .btn.cancel {
+      background: var(--brown-earth);
+      box-shadow: 0 3px 12px rgba(120, 80, 60, 0.6);
+    }
+    .btn.cancel:hover {
+      background: #5c3f2a;
+      box-shadow: 0 6px 20px rgba(88, 58, 18, 0.8);
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .account-details {
+        grid-template-columns: 1fr;
+      }
+      main {
+        margin: 0 15px;
+        padding: 25px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    AgroTech
+  </header>
+
+  <!-- Hidden checkbox to toggle edit mode -->
+  <input type="checkbox" id="editToggle" />
+
+  <main>
+    <h2>My Account</h2>
+
+    <section class="profile">
+      <div class="profile-pic" aria-label="User profile picture"></div>
+      <div class="profile-info">
+        <h2 id="displayName">Madhur Pratap Singh</h2>
+        <p id="displayEmail">madhurpratapsingh2005@example.com</p>
+      </div>
+    </section>
+
+    <section class="section account-section">
+      <h3>Account Details</h3>
+      <div class="account-details">
+        <div>
+          <label for="fullName">Full Name</label>
+          <div class="value" id="nameDisplay">Madhur Pratap Singh</div>
+          <input type="text" id="fullName" name="fullName" value="Madhur Pratap Singh" />
+        </div><br>
+        <div>
+          <label for="email">Email Address</label>
+          <div class="value" id="emailDisplay">madhurpratapsingh2005@gmail.com</div>
+          <input type="email" id="email" name="email" value="madhurpratapsingh2005@example.com" />
+        </div><br>
+        <div>
+          <label for="phone">Phone Number</label>
+          <div class="value" id="phoneDisplay">8127059423</div>
+          <input type="tel" id="phone" name="phone" value="8127059423" />
+        </div><br>
+        <div>
+          <label for="location">Location</label>
+          <div class="value" id="locationDisplay">Indore, MP</div>
+          <input type="text" id="location" name="location" value="Indore, MP" />
+        </div><br>
+      </div>
+
+      <div class="btn-group">
+        <label for="editToggle" class="btn" id="editBtn">Edit</label>
+        <label for="editToggle" class="btn cancel" id="cancelBtn" style="display:none;">Cancel</label>
+        <button type="submit" form="accountForm" class="btn" id="saveBtn" style="display:none;">Save</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Form to submit account changes -->
+  <form id="accountForm" style="display:none;">
+    <input type="hidden" name="fullName" />
+    <input type="hidden" name="email" />
+    <input type="hidden" name="phone" />
+    <input type="hidden" name="location" />
+  </form>
+
+  <script>
+    const editToggle = document.getElementById('editToggle');
+    const editBtn = document.getElementById('editBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const saveBtn = document.getElementById('saveBtn');
+
+    editToggle.addEventListener('change', () => {
+      if (editToggle.checked) {
+        editBtn.style.display = 'none';
+        cancelBtn.style.display = 'inline-block';
+        saveBtn.style.display = 'inline-block';
+      } else {
+        editBtn.style.display = 'inline-block';
+        cancelBtn.style.display = 'none';
+        saveBtn.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

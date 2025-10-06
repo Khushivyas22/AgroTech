@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Purchases - AgroTECH</title>
+  <style>
+    :root {
+      --green-dark: #2e7d32;
+      --green-light: #94b444;
+      --yellow-soft: #f9f4c8;
+      --brown-earth: #78503c;
+      --blue-soft: #a6c8e0;
+      --text-primary: #36392e;
+      --text-secondary: #736359;
+      --background: #f4f9f4;
+      --white: #fff;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background:whitesmoke;
+      color: var(--text-primary);
+      padding: 20px;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--green-dark), var(--green-light));
+      color: var(grey);
+      padding: 25px 20px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 1.9rem;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 10px rgba(120, 80, 60, 0.3);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: var(grey);
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(120, 80, 60, 0.15);
+      padding: 30px 25px;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--green-dark);
+      margin-bottom: 25px;
+    }
+
+    .purchase-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .purchase-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--yellow-soft);
+      border: 2px solid var(--green-light);
+      border-radius: 14px;
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .purchase-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 8px 20px rgba(148, 180, 68, 0.4);
+    }
+
+    .purchase-info {
+      flex: 2;
+    }
+
+    .purchase-info h3 {
+      margin: 0 0 10px 0;
+      color: var(--brown-earth);
+      font-size: 1.3rem;
+    }
+
+    .purchase-info p {
+      margin: 5px 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .purchase-status {
+      flex: 1;
+      text-align: right;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .status.completed {
+      background: #c8e6c9;
+      color: var(--green-dark);
+    }
+    .status.pending {
+      background: #fff3cd;
+      color: #856404;
+    }
+    .status.cancelled {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .actions {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .btn {
+      background: var(--green-light);
+      border: none;
+      color: var(--white);
+      padding: 8px 18px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn:hover {
+      background: var(--green-dark);
+      transform: scale(1.05);
+    }
+
+    .btn.secondary {
+      background: var(--brown-earth);
+    }
+
+    .btn.secondary:hover {
+      background: #5c3f2a;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .purchase-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+      .purchase-status {
+        text-align: left;
+        margin-top: 10px;
+      }
+      .actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    AgroTech - My Purchases
+  </header>
+
+  <main>
+    <h2>Recent Activity</h2>
+    <div class="purchase-list">
+
+      <!-- Purchase Item -->
+      <div class="purchase-card">
+        <div class="purchase-info">
+          <h3>Tractor Rental</h3>
+          <p>Date: 5 Sept 2025</p>
+          <p>Price: ₹4,500</p>
+        </div>
+     
+          
+          </div>
+        </div>
+      </div>
+
+      <!-- Purchase Item -->
+      <div class="purchase-card">
+        <div class="purchase-info">
+          <h3>Fertilizer Pack (20kg)</h3>
+          <p>Date: 2 Sept 2025</p>
+          <p>Price: ₹1,200</p>
+        </div>
+       
+          </div>
+        </div>
+      </div>
+
+      <!-- Purchase Item -->
+      <div class="purchase-card">
+        <div class="purchase-info">
+          <h3>Irrigation Pump</h3>
+          <p>Date: 28 Aug 2025</p>
+          <p>Price: ₹15,000</p>
+        </div>
+       
+        
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
